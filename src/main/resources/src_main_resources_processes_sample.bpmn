@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                   xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                   xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                   xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                   id="sample-process"
+                   targetNamespace="http://www.jboss.org/drools">
+    <bpmn2:process id="sampleProcess" isExecutable="true">
+        <bpmn2:startEvent id="startEvent" name="Start"/>
+        <bpmn2:sequenceFlow id="flow1" sourceRef="startEvent" targetRef="task"/>
+        <bpmn2:userTask id="task" name="User Task"/>
+        <bpmn2:sequenceFlow id="flow2" sourceRef="task" targetRef="endEvent"/>
+        <bpmn2:endEvent id="endEvent" name="End"/>
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_sampleProcess">
+        <bpmndi:BPMNPlane bpmnElement="sampleProcess" id="BPMNPlane_sampleProcess">
+            <bpmndi:BPMNShape bpmnElement="startEvent" id="BPMNShape_startEvent">
+                <dc:Bounds height="36.0" width="36.0" x="173.0" y="102.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="task" id="BPMNShape_task">
+                <dc:Bounds height="80.0" width="100.0" x="259.0" y="80.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="endEvent" id="BPMNShape_endEvent">
+                <dc:Bounds height="36.0" width="36.0" x="409.0" y="102.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+                <di:waypoint x="209.0" y="120.0"/>
+                <di:waypoint x="259.0" y="120.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+                <di:waypoint x="359.0" y="120.0"/>
+                <di:waypoint x="409.0" y="120.0"/>
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</bpmn2:definitions>
